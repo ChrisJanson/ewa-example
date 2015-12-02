@@ -1,3 +1,3 @@
-# ewa-example
-Simple MVC Pattern for PHP-Apps
+# EWA Lecture Hochschule Darmstadt
 
+Simple MVC Pattern for PHP-Apps
