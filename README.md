@@ -1,3 +1,3 @@
-#### EWA Lecture Hochschule Darmstadt
+### EWA Lecture Hochschule Darmstadt
 
-Simple MVC Pattern for PHP-Apps
+Praktikumsrelevante Klassen unter /Praktikum
