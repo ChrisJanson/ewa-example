@@ -1,0 +1,44 @@
+/* AUTHOR */
+h1 {       
+    color: red !important;
+}   /* 0 0 0 1 */
+
+h1.important { 
+    color: blue; 
+}   /* 0 0 1 1 */
+
+#unique {
+    color: purple;
+}    /* 0 1 0 0  */
+
+
+/* READER */
+body h1 {
+    color: green;
+}    /* 0 0 0 2 */
+
+
+/* BROWSER */
+h1 {
+    color: yellow !important; 
+}    /* 0 0 0 1 */
+
+
+
+/*
+STEPS
+-----
+I) Gather all stylesheets together
+
+
+II) Find all declarations that match
+
+
+III) Sort all matches by AUTHOR / READER / BROWSER
+
+
+IV) a) Calculate specificy score 
+    b) Sort declarations according to how specific they are
+
+
+V)  !important */

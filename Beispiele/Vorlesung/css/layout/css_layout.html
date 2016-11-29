@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Simple HTML5 Layout Example</title>
+        <meta charset="utf-8" />
+        <style>
+            
+            /* Design */
+            h1 {text-align: left; color: cadetblue; font-family: fantasy}
+        
+            header {background-color: aquamarine; padding-left: 2em; margin: 0px; }
+            nav {background-color: aliceblue; padding-left: 2em; border: solid;}
+            #sidebar_left {background-color: bisque; padding: 1em; }
+            #content_main {background-color: deepskyblue; padding: 1em; border: solid; }
+            #content_main article {background-color: blueviolet; padding: 1em; } /* was inherit */
+            #sidebar_right {background-color: darksalmon; padding: 0.5em; }
+            footer {border-color: aqua; border-style: solid; }
+            .snippet {background-color: darkolivegreen; padding: 0pt; border: solid; margin: 0pt }
+            
+            
+            /* Layout */
+            header {
+                display: block;
+                position: fixed;
+/*                float: left;*/
+                top: 0px;
+                width: 100%;
+                height: 5em;
+                    
+            }
+            nav { 
+/*                float: left;*/
+                display: flex; 
+                align-items: center;
+/*                line-height: 2em; */ /* Solution 2 */
+/*                vertical-align: middle;*/
+                position: fixed;
+                width: 100% ;
+                top: 5em; 
+                height: 2em;
+                    
+            } /* padding influences overall width! */
+            
+            #sidebar_left {
+                float: left;
+                display: block; 
+                position: fixed; 
+/*                height: 80%; */
+/*                width: 8em; */
+                min-width: 8em;
+                max-width: 12em; 
+                top: 118px;
+            }
+            #content_main {
+/*                float: left;*/
+                display: block; 
+                position: static;
+                margin-left: 15em;
+                max-width: 50em;
+                margin-top: 118px; 
+/*                width: 60%;*/
+            }
+            #sidebar_right {
+                display: block; 
+                float: right;
+                max-width: 12em;
+                min-width: 8em;
+/*                margin-top: 118px;*/
+                height: 2400px;
+            }
+            .snippet, .item_main {
+                display: block;
+            }
+            .item_main { border: solid; }
+            article {display: inline-block; }
+/*            #sidebar_right {position:fixed; }*/
+            footer {
+                display: block;
+                position: static; 
+                bottom: 0; 
+                width: 100%;
+                clear: both;
+            }
+            
+        </style>
+
+    </head>
+    <body>
+        <header>
+            <h1>Pizza Service</h1>
+        </header>
+        
+        <nav>
+            Sie sind hier: Hier ist der horizontale Navigationsbereich
+        </nav>
+        
+        <section id="sidebar_left">
+            <p>Hier ist die linke seitliche Navigationsleiste in der sich normalerweise alle Links befinden...</p>
+        </section>
+        
+         <aside id="sidebar_right">
+            <p>Hier ist die rechte Sidebar</p>
+            
+            <section id="snippets">
+                <p>Hier stehen die snippets als Artikel</p>
+                <article class="snippet">
+                    <p>Content von Snippet 1</p>
+                </article>
+            </section>
+            
+        </aside>
+        
+        <section id="content_main" title="Titel des Hauptcontent">
+            <p> Hier ist der Hauptcontent</p>
+
+            <article>
+                <p> Hier kommen die Artikel 1</p>
+            </article>
+            <article>
+                <p>Ein 2ter Artikel</p>
+            </article>
+            <article>
+                <p> Ein 3ter Artikel</p>
+            </article>
+            
+            <p> hier ist neuer content hier ist neuer content hier ist neuer content hier ist neuer content hier ist neuer content hier ist neuer content hier ist neuer content hier ist neuer content hier ist neuer content hier ist neuer content hier ist neuer content hier ist neuer content hier ist neuer content hier ist neuer content hier ist neuer content hier ist neuer content hier ist neuer content hier ist neuer content hier ist neuer content hier ist neuer content hier ist neuer content hier ist neuer content hier ist neuer content hier ist neuer content hier ist neuer content  </p>
+
+        </section>
+        
+        <footer>
+            <p>
+            Hier ist der Footer-Bereich
+            </p>
+        </footer>
+        
+        <script>
+            function addArticles(n) {
+                for(i = 0; i < n; i++) {
+                    var article = document.createElement("article");
+                    var p_tag = document.createElement("p");
+                    var textnode = document.createTextNode("Ein n-ter Artikel " + (i+1));
+                    p_tag.appendChild(textnode);
+                    article.setAttribute("class", "item_main");
+                    article.appendChild(p_tag);
+                    
+                    var parent = document.getElementById("content_main");
+                    parent.appendChild(article);
+                }
+            }
+             window.onload = addArticles(20);
+        </script>
+    </body>
+</html>

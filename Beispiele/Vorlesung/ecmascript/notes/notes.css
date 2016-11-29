@@ -1,0 +1,47 @@
+.note {
+    background-color: lightgoldenrodyellow;
+    border: 2px solid orange;
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    max-width: 10rem;
+    box-shadow: 2px 2px 8px darkgray;
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+.content {
+    color: darkgoldenrod;
+    font-family: sans-serif;
+    display: block;
+    margin-bottom: 0.3rem;
+/*    word-break: break-all;*/
+}
+
+.metadata {
+    color: gray;
+    font-family: monospace;
+    font-size: 0.5rem;
+    clear: both;
+}
+
+#notes {
+    display: block;
+    background-color: lightgray;
+}
+
+.visible {
+    opacity: 0.1;
+}
+
+.note:hover {
+    box-shadow: .1rem .1rem 2rem darkgray;
+    background-color: lightyellow;
+}
+
+
+.delete_button {
+    display: inline;
+    float: right;
+}

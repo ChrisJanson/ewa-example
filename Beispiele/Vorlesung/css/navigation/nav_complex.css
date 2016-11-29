@@ -1,0 +1,36 @@
+li a:hover {
+    background-color: dimgray;
+    color: white;
+}
+
+li a:active {
+    background-color: darkseagreen;
+    color: snow;
+}
+
+#special {
+    background-color: yellow;
+    font-style: oblique;
+    color: firebrick;
+}
+
+#special:hover {
+    background-color: red;
+    color: yellow;
+}
+
+
+
+@media screen and (max-width: 580px){
+    nav ul li {
+        float: none;
+    }
+}
+
+
+@media screen and (max-width: 850px){
+    nav ul li a {  // use comma for multiple elements 
+        padding-left: 0.2em;
+        padding-right: 0.2em;
+    }
+}
